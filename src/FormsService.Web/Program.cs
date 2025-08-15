@@ -55,7 +55,7 @@ app.MapHealthChecks("/health");
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<FormsDbContext>();
-    context.Database.EnsureCreated();
+    context.Database.Migrate(); // Applies any pending migrations
 }
 
 Log.Information("Forms Service starting up");

@@ -1,0 +1,30 @@
+@startuml RenderingService Architecture
+
+package "Web" {
+  [Controllers] --> [Application]
+  [Middleware]
+}
+
+package "Application" {
+  [Handlers] --> [Domain]
+  [Queries] --> [Domain]
+  [Services] --> [Infrastructure]
+}
+
+package "Domain" {
+  [Models]
+}
+
+package "Infrastructure" {
+  [Messaging] --> [RabbitMQ]
+  [Persistence] --> [Database]
+  [Services]
+}
+
+package "Tests" {
+  [UnitTests] --> [Application]
+  [IntegrationTests] --> [Web]
+  [IntegrationTests] --> [Infrastructure]
+}
+
+@enduml

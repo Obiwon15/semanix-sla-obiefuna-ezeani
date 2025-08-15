@@ -1,0 +1,28 @@
+# .NET
+bin/
+obj/
+*.csproj.user
+*.suo
+*.cache
+*.user
+*.sln.docstates
+.vs/
+
+# Visual Studio
+.vscode/
+.idea/
+
+# NuGet
+*.nupkg
+packages/
+
+# Logs
+*.log
+logs/
+
+# Environment
+appsettings.*.json
+
+# Docker
+Dockerfile
+docker-compose.*.yml
